@@ -10,7 +10,8 @@ Nanopi-Neo3设有散热风扇接口，散热扇运行噪声较大，故想设置
 * https://bbs.huaweicloud.com/blogs/detail/297252&emsp; 详细例子  
 * https://blog.csdn.net/qq_30898641/article/details/89515799&emsp; 引脚计算  
 * http://wiki.friendlyelec.com/wiki/images/a/ae/NanoPi-NEO3-2005-Schematic.pdf&emsp; 官方原理图  
-* https://blog.csdn.net/qq_20553613/article/details/107703442&emsp; 读取CPU温度  
+* https://blog.csdn.net/qq_20553613/article/details/107703442&emsp; 读取CPU温度 
+* https://blog.csdn.net/lc013/article/details/103775702?msclkid=2cd81662bfeb11ec8c391204449af968 &emsp; crontab定时执行命令
 
 ## 实现步骤
 ### 1.GPIO sysfs interface 基本原理  
