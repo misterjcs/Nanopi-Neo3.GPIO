@@ -12,6 +12,9 @@ Nanopi-Neo3设有散热风扇接口，散热扇运行噪声较大，故想设置
 * http://wiki.friendlyelec.com/wiki/images/a/ae/NanoPi-NEO3-2005-Schematic.pdf&emsp; 官方原理图  
 * https://blog.csdn.net/qq_20553613/article/details/107703442&emsp; 读取CPU温度 
 * https://blog.csdn.net/lc013/article/details/103775702?msclkid=2cd81662bfeb11ec8c391204449af968 &emsp; crontab定时执行命令
+* https://www.cnblogs.com/wqbin/p/11824942.html?msclkid=7dae8caebff111ec8481a4aff7793022 &emsp; crontab status查看的坑
+* https://askubuntu.com/questions/222512/cron-info-no-mta-installed-discarding-output-error-in-the-syslog?msclkid=a9a7e43bbff111ec8139bdf524c2e90e &emsp; crontab执行的坑1
+* https://blog.csdn.net/FuJinlong94/article/details/120428955?msclkid=e7a99656bff211ecbe77b7ca9fdbda90 &emsp; crontab执行的坑2
 
 ## 实现步骤
 ### 1.GPIO sysfs interface 基本原理  
@@ -41,3 +44,7 @@ Nanopi-Neo3设有散热风扇接口，散热扇运行噪声较大，故想设置
 ### 6.编写简单的shell控制  
 * 设置指令：见fan_ctrl.sh
 ### 7.使用crontab定时执行
+* 设置指令：sudo crontab -e
+添加`*/1 * * * *  sh /root/fan_ctrl.sh >/dev/null 2>&1`至文件。   
+* service cron status &emsp; 查看运行状态  
+* service cron restart &emsp; 重启服务  
