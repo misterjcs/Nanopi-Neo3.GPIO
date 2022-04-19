@@ -42,7 +42,7 @@ Nanopi-Neo3设有散热风扇接口，散热扇运行噪声较大，故想设置
 * 查看指令：  
 `cat /sys/devices/virtual/thermal/thermal_zone0/temp`
 ### 6.编写简单的shell控制  
-* 设置指令：见fan_ctrl.sh，存放至/root目录。
+* 见fan_ctrl.sh，存放至/root目录。
 ### 7.使用crontab定时执行
 * 设置指令：sudo crontab -e
 添加`*/1 * * * *  sh /root/fan_ctrl.sh >/dev/null 2>&1`至文件，设置每分钟执行一次。   
