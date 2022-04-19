@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#设置GPIO
+echo 70 > /sys/class/gpio/export
+echo out > /sys/class/gpio/gpio70/direction
+
 #读取当前cpu温度到temp
 temp=$(cat /sys/devices/virtual/thermal/thermal_zone0/temp)
 echo $temp
