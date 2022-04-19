@@ -45,6 +45,6 @@ Nanopi-Neo3设有散热风扇接口，散热扇运行噪声较大，故想设置
 * 设置指令：见fan_ctrl.sh
 ### 7.使用crontab定时执行
 * 设置指令：sudo crontab -e
-添加`*/1 * * * *  sh /root/fan_ctrl.sh >/dev/null 2>&1`至文件。   
+添加`*/1 * * * *  sh /root/fan_ctrl.sh >/dev/null 2>&1`至文件，设置每分钟执行一次。   
 * service cron status &emsp; 查看运行状态  
 * service cron restart &emsp; 重启服务  
