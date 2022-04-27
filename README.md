@@ -54,7 +54,7 @@ Shell+Crontab控制，每分钟检测。
 C程序+开机启动，每秒检测。
 #### 7.1.编写C程序
 * 见c/，存放至/root/fan_ctrl目录。
-* 编译指令`gcc -o fan cputemp.c gpiolib.c fan.c`生成可执行文件fan。
+* 编译指令`gcc -o fan cputemp.c gpiolib.c main.c`生成可执行文件fan。
 #### 7.2.开机自动执行
 * Dieipi设置：dietpi-config -> AutoStart Options -> Custom script ，在exit 0上一行插入/root/fan_ctrl/fan。  
 * 也可通过修改 /etc/rc.d/rc.local 文件方式实现。
