@@ -12,7 +12,7 @@ int main(int argc, char **argv)  {
 	gpio_direction(gpiopin,1);
 	while(1) {
 		temp = cpu_temp_read();
-		printf("Current cpu temp is %d °C\n", temp/1000);
+		//printf("Current cpu temp is %d °C\n", temp/1000);
 	
 	    if ( temp > 70000 )
 			gpio_write(gpiopin,1);
