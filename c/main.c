@@ -14,7 +14,7 @@ int main(int argc, char **argv)  {
 		temp = cpu_temp_read();
 		//printf("Current cpu temp is %d °C\n", temp/1000);
 	
-	    if ( temp > 70000 )
+	    if ( temp > 60000 )
 			gpio_write(gpiopin,1);
 		else if (temp < 45000)
 			gpio_write(gpiopin,0);
