@@ -41,10 +41,20 @@ Nanopi-Neo3设有散热风扇接口，散热扇运行噪声较大，故想设置
 * 经查找，cpu温度存储于 **/sys/devices/virtual/thermal/thermal_zone0/temp** 文件中，数值除1000即为当前实际温度。  
 * 查看指令：  
 `cat /sys/devices/virtual/thermal/thermal_zone0/temp`
-### 6.编写简单的shell控制  
-* 见fan_ctrl.sh，存放至/root目录。
-### 7.使用crontab定时执行
+### 6.Shell控制
+Shell+Crontab控制，每分钟检测。  
+#### 6.1.编写shell脚本
+* 见shell/fan_ctrl.sh，存放至/root目录。
+#### 6.2.使用crontab定时执行
 * 设置指令：sudo crontab -e
 添加`*/1 * * * *  sh /root/fan_ctrl.sh >/dev/null 2>&1`至文件，设置每分钟执行一次。   
 * service cron status &emsp; 查看运行状态  
 * service cron restart &emsp; 重启服务  
+### 7.C程序控制
+C程序+开机启动，每秒检测。
+#### 7.1.编写C程序
+* 见c/，存放至/root/fan_ctrl目录。
+* 编译指令`gcc -o fan cputemp.c gpiolib.c fan.c`生成可执行文件fan。
+#### 7.2.开机自动执行
+* Dieipi设置：dietpi-config -> AutoStart Options -> Custom script ，在exit 0上一行插入/root/fan_ctrl/fan。  
+* 也可通过修改 /etc/rc.d/rc.local 文件方式实现。
