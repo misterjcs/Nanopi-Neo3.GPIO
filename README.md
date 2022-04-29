@@ -1,5 +1,5 @@
 # Nanopi-Neo3.GPIO
-系统为Dietpi,不修改内核，在用户层使用sysfs设置rk3288的GPIO。
+系统为Dietpi，不修改内核，在用户层使用sysfs设置rk3288的GPIO。
 
 ## 简介
 Nanopi-Neo3设有散热风扇接口，散热扇运行噪声较大，故想设置CPU达到温度后自动开启风扇，降温后再关闭。  
