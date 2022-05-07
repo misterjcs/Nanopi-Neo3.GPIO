@@ -16,7 +16,7 @@ int main(int argc, char **argv)  {
 	
 	    if ( temp > 60000 )
 			gpio_write(gpiopin,1);
-		else if (temp < 45000)
+		else if (temp < 50000)
 			gpio_write(gpiopin,0);
 		
         sleep(1);
